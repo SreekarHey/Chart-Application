@@ -103,10 +103,10 @@ const options = {
         .then(data => {
           console.log('Response:', data?.products);      
   
-          // Filter out selected products to be used as categories
+       
           const filteredProducts = data?.products.filter((product:any) => selectedProduct.includes(product.title));
   
-          // Update the options with filtered products as categories
+          
           const newOptions = {
             ...options,
             xAxis: {
@@ -122,7 +122,7 @@ const options = {
           console.log(newOptions, "newOptions");
           setChartData(newOptions);
         })
-        .catch(error => console.error('Error fetching data:', error));
+        .catch(error => console.error('Error:', error));
     } else {
       console.error('No category selected');
     }
